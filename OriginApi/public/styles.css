@@ -1,0 +1,21 @@
+
+  body {
+    font-family: 'Circular', sans-serif;
+  }
+  
+  .color-secondary{
+    color: #db5e8e;
+  }
+
+
+  .color-primary {
+    color: #0e2d42; /* Spotify Green */
+  }
+  
+  .bg-primary{
+    background-color: #0e2d42;
+  }
+
+  .bg-primary:hover{
+    background-color: #db5e8e;
+  } 

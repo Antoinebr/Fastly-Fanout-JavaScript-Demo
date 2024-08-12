@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-time Counter</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-white font-sans flex items-center justify-center h-screen px-4 md:px-0">
+  <div class="text-center color-primary">
+    <img src="logoBaby-w200.png"  class="m-auto" width="200" alt="" srcset="">
+    <p class="font-bold text-4xl md:text-8xl color-secondary">Fanout</p>
+    <h1 class="text-2xl md:text-4xl">World population counter </h1>
+
+    <p class="mb-2"> Open this page in an other tab to see updates propagated to all clients </p>
+
+    <div id="counter" class="mt-4 text-4xl md:text-6xl font-extrabold"></div>
+
+    <button id="incrementBtn" class="bg-primary mt-6 hover:bg-secondary text-white font-bold py-2 px-4 rounded">
+        update the counter for everyone
+    </button>
+
+    <p class="text-xs mt-1"> or hit Enter </p>
+
+    
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
