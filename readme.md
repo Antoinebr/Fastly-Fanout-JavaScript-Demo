@@ -27,6 +27,8 @@ The second component is your origin, which responds to WebSocket connections and
 
 ## Deploy this demo 
 
+[![demo](./docs/projectScreenShot.png)]()
+
 To deploy this demo you will need : 
 
 - Access to the Fastly CLI 
