@@ -1,0 +1,27 @@
+# This file describes a Fastly Compute package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = ["<oss@fastly.com>"]
+description = "Enables Fanout on a service, forwarding to a backend."
+language = "javascript"
+manifest_version = 3
+name = "Fanout forwarding starter kit for JavaScript"
+service_id = "<YOUR_SERVICE_ID>"
+
+[scripts]
+build = "npm run build"
+post_init = "npm install"
+
+
+[local_server]
+  [local_server.backends]
+    [local_server.backends.your_backend_name]
+      override_host = "fanout.antoinebrossault.com"
+      url = "https://fanout.antoinebrossault.com"
+
+
+[setup]
+  [setup.backends]
+    [setup.backends.your_backend_name]
+      address = "fanout.antoinebrossault.com"
+      port = 443
