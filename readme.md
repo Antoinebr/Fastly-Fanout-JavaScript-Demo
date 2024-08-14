@@ -279,5 +279,5 @@ const publishUpdate = async (counterValue, counterId) => {
 
 Note: The important point here is that I do not maintain any connections myself. Fanout does it for me, and I simply publish updates by calling the API endpoint I mentioned.
 
-In other words, if my origin is unresponsive or restarts, I’m still able to maintain this connection with Fanout.
+In other words, if my origin is unresponsive or restarts, I’m still able to maintain this realtime connection with Fanout.
 
