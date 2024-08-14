@@ -16,7 +16,7 @@ The answer is simple: you can send messages to clients by making a REST API call
 
 ## Architecture 
 
-[![Architecture](./docs/setup-precomposed.svg)]()
+[![Architecture](./docs/fanout-schema.png)]()
 
 ### Components 
 
