@@ -131,7 +131,7 @@ async function handleRequest(event) {
 
 with ```createFanoutHandoff(event.request, "fanout_antoinebrossault_com");``` Fanout will hold the connection for us. 
 
-At are origin we will receive the request from Fanout, here's how to handle the request that went trough the ```createFanoutHandoff``` : 
+At the origin we will receive the request from Fanout, here's how to handle the request that went trough the ```createFanoutHandoff``` : 
 
 
 ```JavaScript
