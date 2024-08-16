@@ -25,25 +25,6 @@ To use fanout, you need two components. The first one is a Compute@Edge app that
 The second component is your origin, which responds to WebSocket connections and/or event streams.
 
 
-## Deploy this demo 
-
-[![demo](./docs/projectScreenShot.png)]()
-
-To deploy this demo you will need : 
-
-- Access to the Fastly CLI 
-- Basic knowledge of Fastly Compute 
-- Basic knowledge of Node.js 
-- A Fastly API Key
-
-
-### Deploy Compute@Edge app
-
-### Deploy the Node.js App somewhere
-
-
-
-
 ## How to subscribe
 
 In this demo, when the user lands on the HomePage, a request is made to the origin to get the count:
@@ -281,3 +262,71 @@ Note: The important point here is that I do not maintain any connections myself.
 
 In other words, if my origin is unresponsive or restarts, I’m still able to maintain this realtime connection with Fanout.
 
+
+
+
+## Deploy this demo 
+
+[![demo](./docs/projectScreenShot.png)]()
+
+To deploy this demo you will need : 
+
+- Access to the Fastly CLI 
+- Basic knowledge of Fastly Compute 
+- Basic knowledge of Node.js 
+- A Fastly API Key
+
+
+### Deploy Compute@Edge app
+
+Fastly has a JavaScript Fanout Starter Kit that you can find here: https://www.fastly.com/documentation/solutions/starters/compute-starter-kit-javascript-fanout-forward/. Follow the instructions on that page to get a fully functional compute app for fanout.
+
+The code for this app is available here: https://github.com/fastly/compute-starter-kit-javascript-fanout-forward/blob/main/src/index.js. It's also code that I will reference a couple of times in this article.
+
+When this is done, you will have an app available on a domain that looks like this: https://fanoutdemo.edgecompute.app/
+
+Note: You will need the service ID of this app in the next section.
+
+### Deploy the Node.js App somewhere
+
+Copy the folder `OriginAPI` to a different location, then set the environment variables in the same manner as shown in the `.env.example` file.
+
+```
+FASTLY_SERVICE_ID=THE_SERVICE_ID
+FASTLY_KEY=YOUR_FASTLY_API_KEY
+PORT=THE_PORT_OF_THE_NODEJS_APP
+```
+
+Once this is done you can install and start the app : 
+
+```
+npm install 
+```
+
+Then to start the app, you can either:
+
+```
+node app.js 
+```
+
+or if nodemon is installed ```npm install nodemon -g``` 
+
+```
+npm run dev 
+```
+
+This will start your Node.js app on the port you defined in the ```.env``` or on the port ```3000``` if you didn't.
+
+**Update the enpoint in the front-end JavaScript file**
+
+In 
+
+ ```/public/app.js``` 
+
+Look for this line
+
+```JavaScript 
+const endpoint = "https://fanoutdemo.edgecompute.app";
+```
+
+Then, update it with the URL of your previously deployed Compute@Edge app.
